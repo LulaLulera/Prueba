@@ -1,0 +1,17 @@
+<h1>Comunicados de las personas mayores de edad</h1>
+<%= @comunicados %>
+<% @comunicados.each do |comunicado| %>
+  <p>
+    ID: <%= comunicado.id %>
+    Asunto: <%= comunicado.asunto %><br>
+    Contenido: <%= comunicado.contenido %><br>
+    Creador: <%= comunicado.creador.nombre %> - 
+    Fecha de nacimiento: <%= comunicado.creador.fecha_nacimiento %><br>
+    Receptor: <%= comunicado.receptor.nombre %><br><br>
+
+    Numero de adjuntos: <%= comunicado.numero_adjuntos %>
+  </p>
+  <hr>
+<% end %>
+
+<%= link_to "En formato json", comunicados_path %>
